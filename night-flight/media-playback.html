@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Night Flight — Android media playback demonstration</title>
+<style>body{background:#08111f;color:#e5edf6;font:17px/1.65 system-ui,sans-serif;margin:0}main{max-width:780px;margin:48px auto;padding:0 24px}h1{font-size:32px;line-height:1.25}p{color:#c1cfdf}video{display:block;width:min(100%,400px);margin:28px auto;background:#020711;border:1px solid #39516a;border-radius:18px}a{color:#b9def6}li{margin:12px 0}.label{letter-spacing:.12em;font-size:13px;color:#99c2df}</style>
+<main><p class="label">YTHQ STUDIOS · NIGHT FLIGHT</p>
+<h1>Android media playback demonstration</h1>
+<p>Authentic screen recording of Night Flight 1.0.0, package <code>com.ythqstudios.airplanecabinsounds</code>, running in an Android API 36 emulator.</p>
+<video controls playsinline preload="metadata" aria-label="Night Flight foreground media playback demonstration"><source src="media-playback.mp4" type="video/mp4">Your browser cannot play this video. <a href="media-playback.mp4">Download the MP4</a>.</video>
+<ol><li>The user deliberately starts the cabin ambience and sets a one-minute sleep timer.</li><li>Android's native media notification provides playback controls while the audio service runs.</li><li>The device display is turned off briefly; returning to the app shows the continuing countdown.</li><li>The final eight seconds fade the mix. Timer expiry stops playback and the app displays “Sleep timer finished · sound stopped”.</li></ol>
+<p>This is a silent screen recording: Android screenrecord does not capture the audio stream, and may omit frames while the display is off. Separate recorded QA on a physical Pixel 8 verified offline playback, background playback, locked-screen timer expiry and release of the playback service and wake lock.</p>
+<p>The foreground service is required for user-initiated continuous sleep audio while the app is backgrounded or the screen is off. Playback stops on Pause, timer expiry, audio-focus interruption or headphone disconnection and does not automatically restart.</p>
+<p><a href="privacy.html">Privacy policy</a> · <a href="index.html">Night Flight</a></p></main></html>
