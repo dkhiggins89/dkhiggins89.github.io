@@ -1,12 +1,23 @@
 <!doctype html>
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Night Flight — Android media playback demonstration</title>
-<style>body{background:#08111f;color:#e5edf6;font:17px/1.65 system-ui,sans-serif;margin:0}main{max-width:780px;margin:48px auto;padding:0 24px}h1{font-size:32px;line-height:1.25}p{color:#c1cfdf}video{display:block;width:min(100%,400px);margin:28px auto;background:#020711;border:1px solid #39516a;border-radius:18px}a{color:#b9def6}li{margin:12px 0}.label{letter-spacing:.12em;font-size:13px;color:#99c2df}</style>
+<style>body{background:#08111f;color:#e5edf6;font:17px/1.65 system-ui,sans-serif;margin:0}main{max-width:780px;margin:48px auto;padding:0 24px}h1{font-size:32px;line-height:1.25}h2{font-size:24px;line-height:1.3;margin-top:56px}p{color:#c1cfdf}video{display:block;width:min(100%,400px);margin:28px auto;background:#020711;border:1px solid #39516a;border-radius:18px}a{color:#b9def6}li{margin:12px 0}.label{letter-spacing:.12em;font-size:13px;color:#99c2df}</style>
 <main><p class="label">YTHQ STUDIOS · NIGHT FLIGHT</p>
 <h1>Android media playback demonstration</h1>
-<p>Authentic screen recording of Night Flight 1.0.0, package <code>com.ythqstudios.airplanecabinsounds</code>, running in an Android API 36 emulator.</p>
-<video controls playsinline preload="metadata" aria-label="Night Flight foreground media playback demonstration"><source src="media-playback.mp4" type="video/mp4">Your browser cannot play this video. <a href="media-playback.mp4">Download the MP4</a>.</video>
+<p>Night Flight, package <code>com.ythqstudios.airplanecabinsounds</code>, uses the <code>mediaPlayback</code> foreground service type for two user-initiated audio tasks: continuous sleep ambience, and the optional wake-up alarm added in version 1.2.0. Both recordings below are authentic screen recordings of the app running in an Android API 36 emulator.</p>
+
+<h2>1. Sleep ambience with a sleep timer</h2>
+<p>Recorded on Night Flight 1.0.0.</p>
+<video controls playsinline preload="metadata" aria-label="Night Flight sleep ambience foreground playback demonstration"><source src="media-playback.mp4" type="video/mp4">Your browser cannot play this video. <a href="media-playback.mp4">Download the MP4</a>.</video>
 <ol><li>The user deliberately starts the cabin ambience and sets a one-minute sleep timer.</li><li>Android's native media notification provides playback controls while the audio service runs.</li><li>The device display is turned off briefly; returning to the app shows the continuing countdown.</li><li>The final eight seconds fade the mix. Timer expiry stops playback and the app displays “Sleep timer finished · sound stopped”.</li></ol>
-<p>This is a silent screen recording: Android screenrecord does not capture the audio stream, and may omit frames while the display is off. Separate recorded QA on a physical Pixel 8 verified offline playback, background playback, locked-screen timer expiry and release of the playback service and wake lock.</p>
+<p>Separate recorded QA on a physical Pixel 8 verified offline playback, background playback, locked-screen timer expiry and release of the playback service and wake lock.</p>
 <p>The foreground service is required for user-initiated continuous sleep audio while the app is backgrounded or the screen is off. Playback stops on Pause, timer expiry, audio-focus interruption or headphone disconnection and does not automatically restart.</p>
+
+<h2>2. Wake-up alarm</h2>
+<p>Recorded on the signed Night Flight 1.2.0 release build.</p>
+<video controls playsinline preload="metadata" aria-label="Night Flight wake-up alarm foreground playback demonstration"><source src="wake-alarm.mp4" type="video/mp4">Your browser cannot play this video. <a href="wake-alarm.mp4">Download the MP4</a>.</video>
+<ol><li>The user deliberately sets a one-off wake-up alarm, with gradual volume and vibration, and saves it. The app shows the scheduled time.</li><li>The user leaves the app and the display is turned off.</li><li>At the chosen time, Android starts the alarm. A foreground service plays the user's alarm sound on the alarm audio stream and shows an ongoing “Time to wake up” notification with Snooze and Dismiss controls.</li><li>Tapping the notification opens the alarm screen. Dismiss stops the sound and vibration, ends the foreground service and removes the notification.</li></ol>
+<p>The foreground service is required so the alarm sound keeps playing, with the app in the background and the screen off, until the user snoozes or dismisses it. The alarm only plays after the user turns it on, always shows its notification while ringing, and stops by itself after 10 minutes. Notifications from other apps in the emulator are blurred in the recording.</p>
+
+<p>These are silent screen recordings: Android screenrecord does not capture the audio stream, and may omit frames while the display is off.</p>
 <p><a href="privacy.html">Privacy policy</a> · <a href="index.html">Night Flight</a></p></main></html>
