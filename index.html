@@ -1,175 +1,156 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>YTHQ Studios · Small, useful apps for the things you love doing</title>
-<meta name="description" content="YTHQ Studios makes focused Android apps for crafts, kitchens, gardens, sleep and grassroots football. Offline-first, no accounts, your data stays on your phone.">
+<title>YTHQ Studios: Android apps for crafts, cooking, gardening, sleep and football</title>
+<meta name="description" content="YTHQ Studios makes 11 Android apps, including CrochetTally, DoughBench, SpoolNest, BrewTrail, PlotPickings and Moonlatch. They work offline and don't need an account.">
 <link rel="canonical" href="https://ythqstudios.com/">
-<meta property="og:title" content="YTHQ Studios">
-<meta property="og:description" content="Focused Android apps for crafts, kitchens, gardens, sleep and grassroots football.">
-<meta property="og:url" content="https://ythqstudios.com/">
+<meta property="og:type" content="website"><meta property="og:title" content="YTHQ Studios"><meta property="og:description" content="11 Android apps for crafts, cooking, gardening, sleep and grassroots football."><meta property="og:url" content="https://ythqstudios.com/"><meta property="og:image" content="https://ythqstudios.com/brand/og-image.png">
+<link rel="icon" href="/brand/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/brand/apple-touch-icon.png"><meta name="theme-color" content="#16211D">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "YTHQ Studios", "url": "https://ythqstudios.com/", "logo": "https://ythqstudios.com/brand/mark.svg", "email": "support@ythqstudios.com", "sameAs": ["https://play.google.com/store/apps/dev?id=7105260936614890689"]}</script>
 <style>
-:root{--bg:#f6f3ec;--ink:#1f2421;--muted:#5d655f;--line:#e2ddd2;--card:#fffdf8;--accent:#2f5d4a;--accent-soft:#e3ece6}
+:root{--forest:#16211D;--moss:#2F5D4E;--sage:#8DB8A6;--clay:#D06A4C;--ochre:#E3A443;--linen:#F4EFE6;--paper:#FBF9F5;--ink:#1C2723;--muted:#56625D;--line:#E2DCD0;
+--bg:var(--paper);--fg:var(--ink);--fg2:var(--muted);--surface:#FFFFFF;--rule:var(--line);--link:var(--moss);--logo-light:block;--logo-dark:none;
+--r-s:10px;--r-m:16px;--r-l:28px;--max:1180px;
+font-synthesis:none}
+@media (prefers-color-scheme:dark){:root{--bg:#121A17;--fg:#EEE9DF;--fg2:#A9B3AE;--surface:#1B2622;--rule:#2A3631;--link:var(--sage);--logo-light:none;--logo-dark:block}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-.brand{font-weight:700;letter-spacing:.08em;font-size:14px;text-decoration:none;color:var(--ink)}
-.brand span{display:inline-block;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:6px;margin-right:8px;letter-spacing:.04em}
-nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-size:15px}
-nav a:hover{color:var(--ink)}
-.hero{padding:56px 0 40px}
-.hero h1{font:600 clamp(38px,6vw,64px)/1.05 Georgia,"Times New Roman",serif;margin:0 0 18px;max-width:14ch;letter-spacing:-.01em}
-.hero p{font-size:20px;color:var(--muted);max-width:56ch;margin:0}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;padding:0;list-style:none}
-.pills li{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
-section.group{padding:34px 0 8px;border-top:1px solid var(--line)}
-section.group h2{font:600 26px/1.2 Georgia,serif;margin:0 0 6px}
-section.group > .wrap > p{color:var(--muted);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:28px}
-.app{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px}
-.app .head{display:flex;gap:14px;align-items:center}
-.app img{width:60px;height:60px;border-radius:15px;flex:none;background:var(--line)}
-.app h3{margin:0;font-size:19px;line-height:1.25}
-.app .sub{margin:2px 0 0;font-size:14px;color:var(--muted)}
-.app p.desc{margin:0;font-size:15.5px}
-.app .links{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:14px}
-.play{background:var(--ink);color:#fff !important;text-decoration:none;padding:9px 16px;border-radius:999px;font-weight:600}
-.play:hover{background:var(--accent)}
-.links a:not(.play){color:var(--muted)}
-.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:40px 0}
-.promise div{border-left:3px solid var(--accent);padding:2px 0 2px 16px}
-.promise strong{display:block;font-size:17px}
-.promise span{color:var(--muted);font-size:15px}
-.contact{background:var(--ink);color:#f3efe6;border-radius:24px;padding:40px;margin:30px 0 50px}
-.contact h2{font:600 30px/1.2 Georgia,serif;margin:0 0 10px}
-.contact p{margin:0 0 8px;color:#cfd6d1}
-.contact a{color:#fff}
-footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
-footer a{color:var(--muted)}
-@media (max-width:560px){nav{display:none}.contact{padding:28px}}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.55 "DM Sans",system-ui,sans-serif;font-optical-sizing:auto}
+a{color:var(--link);text-underline-offset:3px}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;background:var(--surface);padding:8px 12px;z-index:9}
+header.site{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--rule)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo img{height:34px;width:auto}.logo .l{display:var(--logo-light)}.logo .d{display:var(--logo-dark)}
+nav.main{display:flex;gap:6px;align-items:center}
+nav.main a{color:var(--fg);text-decoration:none;font-weight:500;font-size:15px;padding:8px 12px;border-radius:999px}
+nav.main a:hover{background:color-mix(in srgb,var(--fg) 7%,transparent)}
+nav.main a.play{background:var(--fg);color:var(--bg)}
+nav.main a.play:hover{background:var(--moss);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;text-decoration:none;padding:13px 22px;border-radius:999px;background:var(--fg);color:var(--bg);border:0}
+.btn:hover{background:var(--moss);color:#fff}
+.btn.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--fg) 30%,transparent)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--fg);background:transparent;color:var(--fg)}
+.gp{width:18px;height:18px;flex:none}
+footer.site{border-top:1px solid var(--rule);margin-top:96px;padding:40px 0 56px;color:var(--fg2);font-size:15px}
+footer.site .wrap{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+footer.site nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+footer.site a{color:var(--fg2)}
+footer.site img{height:28px;width:auto;margin-bottom:10px}
+@media (max-width:720px){nav.main a.hide{display:none}footer.site .wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.hero{background:var(--forest);color:#EEE9DF;overflow:hidden;position:relative}
+.hero .wrap{padding-top:88px;padding-bottom:0;text-align:center}
+.hero h1{font-weight:700;font-size:clamp(40px,6.4vw,84px);line-height:1;letter-spacing:-.035em;margin:0 auto;max-width:15ch;text-wrap:balance}
+.hero p.lede{font-size:clamp(18px,1.6vw,21px);color:#B9C5BF;max-width:46ch;margin:24px auto 0;text-wrap:pretty}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.hero .btn{background:#EEE9DF;color:var(--forest)}
+.hero .btn:hover{background:var(--ochre);color:var(--forest)}
+.hero .btn.ghost{background:transparent;color:#EEE9DF;box-shadow:inset 0 0 0 1.5px rgba(238,233,223,.35)}
+.hero .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px #EEE9DF}
+.fan{position:relative;height:clamp(300px,34vw,440px);margin-top:64px}
+.fan a{--w:clamp(120px,14vw,196px);position:absolute;left:50%;bottom:calc(var(--w) * -0.55);width:var(--w);aspect-ratio:9/19.5;margin-left:calc(var(--w)/-2);transform-origin:50% 160%;transform:rotate(var(--a));border-radius:clamp(14px,1.6vw,24px);overflow:hidden;background:#24302B;box-shadow:0 18px 40px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08);animation:open 1.1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 45ms + 150ms);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.fan a img{width:100%;height:100%;object-fit:cover}
+.fan a:hover,.fan a:focus-visible{transform:rotate(var(--a)) translateY(-34px);z-index:30}
+.fan a span{position:absolute;left:10px;right:10px;top:10px;font-size:13px;font-weight:600;color:#fff;background:rgba(22,33,29,.82);padding:6px 10px;border-radius:999px;opacity:0;transition:opacity .2s;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fan a:hover span,.fan a:focus-visible span{opacity:1}
+@keyframes open{from{transform:rotate(0deg) translateY(40px);opacity:0}to{transform:rotate(var(--a));opacity:1}}
+.hero .fan::after{content:"";position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(transparent,var(--forest));pointer-events:none;z-index:35}
+@media (max-width:720px){.fan{height:260px}.fan a{--w:112px}.fan a:nth-child(-n+2),.fan a:nth-last-child(-n+3){display:none}}
+
+section.dir{padding:96px 0 0}
+.dir-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.dir h2,.about h2{font-size:clamp(30px,3.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0;font-weight:700}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:15px;font-weight:500;color:var(--fg);background:transparent;border:1.5px solid var(--rule);border-radius:999px;padding:8px 16px;cursor:pointer;min-height:44px}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.apps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.apps li{border-top:1px solid var(--rule)}
+.apps li[hidden]{display:none}
+.apps a.row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;padding:20px 4px;text-decoration:none;color:var(--fg)}
+.apps img{width:64px;height:64px;border-radius:15px;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.apps b{display:block;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.apps small{display:block;color:var(--fg2);font-size:15.5px;line-height:1.4;margin-top:2px}
+.apps .tag{font-size:13px;color:var(--fg2);white-space:nowrap}
+.apps .chev{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--acc) 18%,transparent);color:var(--fg);transition:transform .2s}
+.apps a.row:hover .chev{transform:translateX(4px);background:var(--acc);color:#fff}
+.apps a.row:hover b{color:var(--link)}
+@media (max-width:860px){.apps{grid-template-columns:1fr}}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:88px;padding:40px;border-radius:var(--r-l);background:var(--surface);box-shadow:0 0 0 1px var(--rule)}
+.facts h3{margin:0 0 6px;font-size:19px;letter-spacing:-.01em}
+.facts p{margin:0;color:var(--fg2);font-size:16px}
+.facts svg{width:40px;height:40px;margin-bottom:14px}
+@media (max-width:860px){.facts{grid-template-columns:1fr;padding:28px}}
+
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;margin-top:104px;align-items:start}
+.about p{margin:0 0 16px;font-size:19px;line-height:1.6;color:var(--fg);max-width:60ch}
+.about p.small{font-size:16px;color:var(--fg2)}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:20px}}
+
+.contact{margin-top:104px;background:var(--moss);color:#F4EFE6;border-radius:var(--r-l);padding:clamp(32px,5vw,64px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end}
+.contact h2{margin:0;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.03em;line-height:1.05}
+.contact p{margin:12px 0 0;color:#D5E2DC;max-width:44ch}
+.contact a.mail{display:inline-block;font-size:clamp(20px,2.2vw,28px);font-weight:600;color:#fff;text-decoration:none;border-bottom:2px solid var(--ochre);padding-bottom:4px}
+.contact a.mail:hover{color:var(--ochre)}
+.contact .alt{margin-top:14px;font-size:15px}.contact .alt a{color:#F4EFE6}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+<a class="logo" href="/" aria-label="YTHQ Studios home"><img class="l" src="/brand/wordmark-light.svg" alt="YTHQ Studios" width="188" height="34"><img class="d" src="/brand/wordmark-dark.svg" alt="YTHQ Studios" width="188" height="34"></a>
+<nav class="main" aria-label="Main"><a href="/#apps">Apps</a><a class="hide" href="/#about">About</a><a class="hide" href="/#contact">Contact</a><a class="play" href="https://play.google.com/store/apps/dev?id=7105260936614890689">Google Play</a></nav>
+</div></header>
+<main id="main">
+<section class="hero" aria-labelledby="h">
 <div class="wrap">
-<header class="top">
-  <a class="brand" href="/"><span>YTHQ</span>STUDIOS</a>
-  <nav><a href="#apps">Apps</a><a href="#promise">How we build</a><a href="#contact">Contact</a></nav>
-</header>
+<h1 id="h">Android apps for crafts, cooking, gardening, sleep and football.</h1>
+<p class="lede">Eleven apps, each built around one job. They all work offline, none of them ask you to sign up, and your records stay on your phone.</p>
+<div class="cta"><a class="btn" href="#apps">Browse the apps</a><a class="btn ghost" href="https://play.google.com/store/apps/dev?id=7105260936614890689"><svg class="gp" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.2 2.3c-.3.3-.4.7-.4 1.2v17c0 .5.1.9.4 1.2l9.4-9.7zM14.8 13.2l2.7 2.8-11.2 6.3c-.5.3-1 .3-1.4.1zM18.7 8.8l3.1 1.8c.9.5.9 1.4 0 2l-3.2 1.8-3-3zM5 1.6c.4-.2.9-.1 1.4.1l11.2 6.4-2.8 2.8z"/></svg>See them on Google Play</a></div>
+</div>
+<div class="fan" aria-label="App screenshots"><a href="/crochettally/" style="--a:-50.0deg;--i:0"><img src="https://play-lh.googleusercontent.com/5HCz3UT7JX_v4xGUuRdggLDv3g5T52LQ6gW9_D3bXRJjHY__598tVyPeWBJVq70kjsXqLcxgPXtZKoEGiNK1Hw=w400" alt="CrochetTally screenshot" loading="eager" width="196" height="425"><span>CrochetTally</span></a><a href="/seam-notebook/" style="--a:-40.0deg;--i:1"><img src="https://play-lh.googleusercontent.com/lcVTiY9063Z7pPMYEpw2lE-TOLktLsSGXYIJVDRrADpvEvu7bGUrk22IpnaQ8Gaw7hjPOshRHduzk3pTmDQiUQ=w400" alt="Seam Notebook screenshot" loading="eager" width="196" height="425"><span>Seam Notebook</span></a><a href="/spoolnest/" style="--a:-30.0deg;--i:2"><img src="https://play-lh.googleusercontent.com/eqho065wc_bBmuHoKuhNQNNi4K9zK_-BbSOr8AN7fyPKdaAoNlb0PLpSkUSaetP2L1dmvQ9a-S6nMkhqhQj9=w400" alt="SpoolNest screenshot" loading="eager" width="196" height="425"><span>SpoolNest</span></a><a href="/doughbench/" style="--a:-20.0deg;--i:3"><img src="https://play-lh.googleusercontent.com/eyv2AEQ7OCtygO5KylCZhMGZd5SUK0B1aMCdjyb62Q5IBdcGPPG7x6hWZ7DPU4RUTXr-EbuuIoKSdPAVahqWig=w400" alt="DoughBench screenshot" loading="eager" width="196" height="425"><span>DoughBench</span></a><a href="/brewtrail/" style="--a:-10.0deg;--i:4"><img src="https://play-lh.googleusercontent.com/xs_fJlwdt8-Z1DNBUIxQk47yOobGemCTJe1b4bAzdBKcieF7Av5LRN9l-InacuL8r0F1v6yfE4SRlLGXUCjNtw=w400" alt="BrewTrail screenshot" loading="eager" width="196" height="425"><span>BrewTrail</span></a><a href="/plotpickings/" style="--a:0.0deg;--i:5"><img src="https://play-lh.googleusercontent.com/gXgcWIAZuH_e92U1drmJSeJaPGthRwNlPgrbeV1s60R4CSNEi7yOafnKPlqug7KdoSXkruOJoPNQD5bwuCYiXQ=w400" alt="PlotPickings screenshot" loading="eager" width="196" height="425"><span>PlotPickings</span></a><a href="/moonlatch/" style="--a:10.0deg;--i:6"><img src="https://play-lh.googleusercontent.com/xjEKvEtWb55BQz3XcNno3LTMgOcuafW8BKWgTpF-WhU36Zb8OcnbvHB91fe7JR_y4zACFee1rANhs4h_TVnp=w400" alt="Moonlatch screenshot" loading="eager" width="196" height="425"><span>Moonlatch</span></a><a href="/night-flight/" style="--a:20.0deg;--i:7"><img src="https://play-lh.googleusercontent.com/1-f6TquT2jx8Yl5b4JSAQdnwALA2cMA458GGsAFc_qwpyky-qBl6PkaPG1ehlRQa-Y_fYYE8Fc5EPDWUFXINkQ=w400" alt="Airplane Cabin Sounds screenshot" loading="eager" width="196" height="425"><span>Airplane Cabin Sounds</span></a><a href="/youth-football-attendance/" style="--a:30.0deg;--i:8"><img src="https://play-lh.googleusercontent.com/CS1MVV-YUWGlxKyWiVHVuXtWiwQyqrSo1ldjJa8OOSMebyb-KoUY9IR-6Vka65VkwqiaC5Dz8sq46grofSQb1Q=w400" alt="Youth Football Attendance screenshot" loading="eager" width="196" height="425"><span>Youth Football Attendance</span></a><a href="/football-coach/" style="--a:40.0deg;--i:9"><img src="https://play-lh.googleusercontent.com/tD3cTiNXxNTdOqg2bdgGlTXr2jvgjtX89ApoCv9FSVGAy9s0gy2SNu5AYah2o8Qda6yV7ftPENoBEQW42TYEWA=w400" alt="Football Coach screenshot" loading="eager" width="196" height="425"><span>Football Coach</span></a><a href="/fitandem/" style="--a:50.0deg;--i:10"><img src="https://play-lh.googleusercontent.com/bku14RRs3SI-xq0zFMuHERUCENSXw_NwMe_bGIs1un9d4PXEv0NqUhg5cwo9tBhbLsSh2UX5-gbiLZVjGyWtJg=w400" alt="Fitandem screenshot" loading="eager" width="196" height="425"><span>Fitandem</span></a></div>
+</section>
 
-<section class="hero">
-  <h1>Small, useful apps for the things you love doing.</h1>
-  <p>We make focused Android apps for crafting, cooking, growing, sleeping and grassroots football. They work offline, need no account, and keep your data on your phone.</p>
-  <ul class="pills"><li>Offline-first</li><li>No sign-up</li><li>Your data stays on your device</li><li>Made in the UK</li></ul>
+<div class="wrap">
+<section class="dir" id="apps" aria-labelledby="apps-h">
+<div class="dir-head"><h2 id="apps-h">The apps</h2><div class="filters" role="group" aria-label="Filter apps"><button type="button" aria-pressed="true" data-f="all">All apps</button><button type="button" aria-pressed="false" data-f="make">Making</button><button type="button" aria-pressed="false" data-f="kitchen">Kitchen and garden</button><button type="button" aria-pressed="false" data-f="sleep">Sleep</button><button type="button" aria-pressed="false" data-f="sport">Football and fitness</button></div></div>
+<ul class="apps"><li data-fam="make" style="--acc:#9a4a32"><a class="row" href="/crochettally/"><img src="https://play-lh.googleusercontent.com/HJ3vqj4kSdaq9cDf7UvPJGvCFzQJbV7MP-_km58Z_38cvK4sgbn6LpuvGE2C5vZGslKx36T6WxV2w-KJbOVe=s128" alt="" width="64" height="64" loading="lazy"><span><b>CrochetTally</b><small>Row and stitch counter with your pattern on screen.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="make" style="--acc:#5b3f73"><a class="row" href="/seam-notebook/"><img src="https://play-lh.googleusercontent.com/GK0nx8MxoQgoCd-16hrnRpeY7lGcRvlWNK6I4HVyupwnF5mguB0PKZb1_OBDw280YWS2OuPe5pVBv0JMzbKLtA=s128" alt="" width="64" height="64" loading="lazy"><span><b>Seam Notebook</b><small>Fabric stash, patterns and the machine settings that worked.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="make" style="--acc:#4c497a"><a class="row" href="/spoolnest/"><img src="https://play-lh.googleusercontent.com/pYSQdGKPeXxoc9JZEt_VpgHFL0Kl0HA-I4nnm6ATenDiNJAt-vnDiJMAQnW387idJIsD2rpfGp-78AuOSRobSw=s128" alt="" width="64" height="64" loading="lazy"><span><b>SpoolNest</b><small>Filament stock, grams left and what each print cost.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="kitchen" style="--acc:#a3462a"><a class="row" href="/doughbench/"><img src="https://play-lh.googleusercontent.com/XWuVfsjUpeDCETCtfpNIQOOZgPqgHDVFPSqefhIWW-7276jpQvkbpz5-4MSh8JM998MqfR4Pm0I9gU_omSflnQ=s128" alt="" width="64" height="64" loading="lazy"><span><b>DoughBench</b><small>Pizza dough in grams, from style to bake time.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="kitchen" style="--acc:#275e4a"><a class="row" href="/brewtrail/"><img src="https://play-lh.googleusercontent.com/1ORnuF9F7at4DvtF3Ml2Ci1Iq2PJjZ2R3_DiS0MWs97uIsOoYdf_gCbqAqFQL3Fiy6kX7Jp5aLoH-OTCivCt6g=s128" alt="" width="64" height="64" loading="lazy"><span><b>BrewTrail</b><small>Brew timer, guides and a journal of every cup.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="kitchen" style="--acc:#3c6b35"><a class="row" href="/plotpickings/"><img src="https://play-lh.googleusercontent.com/iCPD2eoy57i5S9btHV7Sl3ySfVuU7WRNB4B5MvlgrrO3L4dwqfLbIhwi6PyOwqf46RD1KX3qyW4lGJ984j3m4w=s128" alt="" width="64" height="64" loading="lazy"><span><b>PlotPickings</b><small>Harvest log, crop notes and garden spending.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="sleep" style="--acc:#3b3a78"><a class="row" href="/moonlatch/"><img src="https://play-lh.googleusercontent.com/4DSBP4MuyPdC3TFHNLI56ecjVKHZ6ohpIkuRJr12FD7QaBnH_kM0onhxdQg26qAYcaJyQ7jfE7tejQ8oQwNMNQ=s128" alt="" width="64" height="64" loading="lazy"><span><b>Moonlatch</b><small>Lucid dreaming techniques, sleep sounds and a dream journal.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="sleep" style="--acc:#2b4a6b"><a class="row" href="/night-flight/"><img src="https://play-lh.googleusercontent.com/xSXF00XTs7C_P4C2h6e5IPjkukihbxPyEL_1Vt_yv-parfyUUXwXO0lgzenKp_Fn3PWpTpi21IBVn0VSMQxchQ=s128" alt="" width="64" height="64" loading="lazy"><span><b>Airplane Cabin Sounds</b><small>Airplane cabin white noise with a sleep timer.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="sport" style="--acc:#1f5c99"><a class="row" href="/youth-football-attendance/"><img src="https://play-lh.googleusercontent.com/LERVgFx0YjMId7s3iDtN9vlLZELCG4tZNOwBm5n8y_u8DkUguri2qm-yAJJxxivJ1xYHtGcE0KKgHyg4RJWD3w=s128" alt="" width="64" height="64" loading="lazy"><span><b>Youth Football Attendance</b><small>Attendance register for youth football training and matches.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="sport" style="--acc:#1d6b3c"><a class="row" href="/football-coach/"><img src="https://play-lh.googleusercontent.com/FFs3rEIRf5udjP3rStgJt8UxnG_79i2FlUPdxaOEr4McFzv7eyUu0c9t4-0v3hjH74pIWBEU1jkuWBWUEQGsEQ=s128" alt="" width="64" height="64" loading="lazy"><span><b>Football Coach</b><small>Fair playing time and substitutions on match day.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li><li data-fam="sport" style="--acc:#c0443b"><a class="row" href="/fitandem/"><img src="https://play-lh.googleusercontent.com/ik0U8sCQX8b_FcNnNNv8P_crLjfUrFmk1AKNI56A6dw1rPerxNZOdz8lerOpkI0bCg9GqydMP0q9ggscciCy1g=s128" alt="" width="64" height="64" loading="lazy"><span><b>Fitandem</b><small>Log activity with a partner and keep a shared streak.</small></span><span class="chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M5 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li></ul>
+</section>
+
+<section class="facts" aria-label="What every app has in common">
+<div><svg viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(8 32)"><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-85)" fill="#2F5D4E"/><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-45)" fill="#8DB8A6"/><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-5)" fill="#2F5D4E"/><circle r="2.4" fill="var(--surface)"/></g></svg><h3>No account</h3><p>Every app opens straight to the tool. There's nothing to sign up for.</p></div>
+<div><svg viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(8 32)"><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-85)" fill="#D06A4C"/><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-45)" fill="#E3A443"/><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-5)" fill="#D06A4C"/><circle r="2.4" fill="var(--surface)"/></g></svg><h3>Works offline</h3><p>Your records are stored on your phone. You can export a backup whenever you like.</p></div>
+<div><svg viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(8 32)"><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-85)" fill="#2F5D4E"/><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-45)" fill="#D06A4C"/><rect x="-5" y="-5" width="30" height="10" rx="5" transform="rotate(-5)" fill="#E3A443"/><circle r="2.4" fill="var(--surface)"/></g></svg><h3>Free to download</h3><p>The apps are free, with ads. Many have a one-off purchase that removes them.</p></div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-h">
+<h2 id="about-h">About the studio</h2>
+<div><p>YTHQ started as YouthTeamHQ, making an attendance register and a playing-time tracker for grassroots football coaches. The same approach now covers other hobbies: crochet, sewing, 3D printing, pizza, coffee, allotments and sleep.</p>
+<p class="small">YTHQ Studios is an independent developer based in the UK. If something in one of the apps doesn't work the way you expect, email us and we'll look into it.</p></div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
+<div><h2 id="contact-h">Questions, bugs or ideas</h2><p>Tell us which app you're using and what happened, and we'll get back to you.</p></div>
+<div><a class="mail" href="mailto:support@ythqstudios.com">support@ythqstudios.com</a><p class="alt">Privacy questions: <a href="mailto:privacy@ythqstudios.com">privacy@ythqstudios.com</a></p></div>
 </section>
 </div>
-
-<main id="apps">
-<section class="group"><div class="wrap">
-  <h2>Make &amp; create</h2>
-  <p>Keep count, keep track and get back to the fun part.</p>
-  <div class="grid">
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/HJ3vqj4kSdaq9cDf7UvPJGvCFzQJbV7MP-_km58Z_38cvK4sgbn6LpuvGE2C5vZGslKx36T6WxV2w-KJbOVe=s128" alt="" loading="lazy"><div><h3><a href="/crochettally/" style="color:inherit;text-decoration:none">CrochetTally</a></h3><p class="sub">Row Counter</p></div></div>
-      <p class="desc">Crochet row and stitch counter with PDF patterns, a home-screen widget, hands-free volume-button counting, a hook size chart and a project timer.</p>
-      <div class="links"><a href="/crochettally/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.crochettally">Get it on Google Play</a><a href="/crochettally/privacy.html">Privacy</a><a href="/crochettally/terms.html">Terms</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/GK0nx8MxoQgoCd-16hrnRpeY7lGcRvlWNK6I4HVyupwnF5mguB0PKZb1_OBDw280YWS2OuPe5pVBv0JMzbKLtA=s128" alt="" loading="lazy"><div><h3><a href="/seam-notebook/" style="color:inherit;text-decoration:none">Seam Notebook</a></h3><p class="sub">Sewing Planner</p></div></div>
-      <p class="desc">Sewing organiser for your fabric stash, patterns, projects and sewing machine settings.</p>
-      <div class="links"><a href="/seam-notebook/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.seamnotebook">Get it on Google Play</a><a href="/seam-notebook/privacy.html">Privacy</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/pYSQdGKPeXxoc9JZEt_VpgHFL0Kl0HA-I4nnm6ATenDiNJAt-vnDiJMAQnW387idJIsD2rpfGp-78AuOSRobSw=s128" alt="" loading="lazy"><div><h3><a href="/spoolnest/" style="color:inherit;text-decoration:none">SpoolNest</a></h3><p class="sub">Filament Tracker</p></div></div>
-      <p class="desc">3D printing filament tracker: spool inventory, grams left, weigh-on-a-scale, print costs, stats and a running-low shopping list.</p>
-      <div class="links"><a href="/spoolnest/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.spoolnest">Get it on Google Play</a><a href="/spoolnest/privacy.html">Privacy</a><a href="/spoolnest/terms.html">Terms</a></div>
-    </article>
-  </div>
-</div></section>
-
-<section class="group"><div class="wrap">
-  <h2>Kitchen &amp; garden</h2>
-  <p>Better pizza, better coffee and a record of everything you grow.</p>
-  <div class="grid">
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/XWuVfsjUpeDCETCtfpNIQOOZgPqgHDVFPSqefhIWW-7276jpQvkbpz5-4MSh8JM998MqfR4Pm0I9gU_omSflnQ=s128" alt="" loading="lazy"><div><h3><a href="/doughbench/" style="color:inherit;text-decoration:none">DoughBench</a></h3><p class="sub">Pizza Calculator</p></div></div>
-      <p class="desc">Pizza dough calculator with style presets, ball weight from pizza size, poolish and biga, and a bake plan with reminders.</p>
-      <div class="links"><a href="/doughbench/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.doughbench">Get it on Google Play</a><a href="/doughbench/privacy.html">Privacy</a><a href="/doughbench/terms.html">Terms</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/1ORnuF9F7at4DvtF3Ml2Ci1Iq2PJjZ2R3_DiS0MWs97uIsOoYdf_gCbqAqFQL3Fiy6kX7Jp5aLoH-OTCivCt6g=s128" alt="" loading="lazy"><div><h3><a href="/brewtrail/" style="color:inherit;text-decoration:none">BrewTrail</a></h3><p class="sub">Coffee Journal</p></div></div>
-      <p class="desc">Coffee brew timer and journal with brew guides, ratios, tasting notes, stats and your best recipe for every bean.</p>
-      <div class="links"><a href="/brewtrail/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.brewtrail">Get it on Google Play</a><a href="/brewtrail/privacy.html">Privacy</a><a href="/brewtrail/terms.html">Terms</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/iCPD2eoy57i5S9btHV7Sl3ySfVuU7WRNB4B5MvlgrrO3L4dwqfLbIhwi6PyOwqf46RD1KX3qyW4lGJ984j3m4w=s128" alt="" loading="lazy"><div><h3><a href="/plotpickings/" style="color:inherit;text-decoration:none">PlotPickings</a></h3><p class="sub">Harvest Tracker</p></div></div>
-      <p class="desc">Allotment and vegetable garden harvest log: crops, yields, costs and seasons, all in one place.</p>
-      <div class="links"><a href="/plotpickings/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.allotmentledger">Get it on Google Play</a><a href="/plotpickings/privacy.html">Privacy</a></div>
-    </article>
-  </div>
-</div></section>
-
-<section class="group"><div class="wrap">
-  <h2>Sleep &amp; rest</h2>
-  <p>Wind down, drift off and explore your dreams.</p>
-  <div class="grid">
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/4DSBP4MuyPdC3TFHNLI56ecjVKHZ6ohpIkuRJr12FD7QaBnH_kM0onhxdQg26qAYcaJyQ7jfE7tejQ8oQwNMNQ=s128" alt="" loading="lazy"><div><h3><a href="/moonlatch/" style="color:inherit;text-decoration:none">Moonlatch</a></h3><p class="sub">Lucid Dream &amp; Sleep</p></div></div>
-      <p class="desc">Learn to lucid dream with a dream journal, reality checks, sleep sounds and proven techniques.</p>
-      <div class="links"><a href="/moonlatch/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.oneira">Get it on Google Play</a><a href="/moonlatch/privacy.html">Privacy</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/xSXF00XTs7C_P4C2h6e5IPjkukihbxPyEL_1Vt_yv-parfyUUXwXO0lgzenKp_Fn3PWpTpi21IBVn0VSMQxchQ=s128" alt="" loading="lazy"><div><h3><a href="/night-flight/" style="color:inherit;text-decoration:none">Airplane Cabin Sounds</a></h3><p class="sub">Sleep</p></div></div>
-      <p class="desc">Airplane white noise and steady engine hum for sleep and focus. Works offline, with a sleep timer.</p>
-      <div class="links"><a href="/night-flight/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.airplanecabinsounds">Get it on Google Play</a><a href="/night-flight/privacy.html">Privacy</a></div>
-    </article>
-  </div>
-</div></section>
-
-<section class="group"><div class="wrap">
-  <h2>Grassroots football &amp; fitness</h2>
-  <p>Tools for volunteer coaches, and a way to stay active with the people you care about.</p>
-  <div class="grid">
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/LERVgFx0YjMId7s3iDtN9vlLZELCG4tZNOwBm5n8y_u8DkUguri2qm-yAJJxxivJ1xYHtGcE0KKgHyg4RJWD3w=s128" alt="" loading="lazy"><div><h3><a href="/youth-football-attendance/" style="color:inherit;text-decoration:none">Youth Football Attendance</a></h3><p class="sub">Team register</p></div></div>
-      <p class="desc">Attendance register for youth football coaches: training, matches and reminders in one place.</p>
-      <div class="links"><a href="/youth-football-attendance/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.aistudio.youthfootballattendance.ymzkvq">Get it on Google Play</a><a href="/youth-football-attendance-privacy/">Privacy</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/FFs3rEIRf5udjP3rStgJt8UxnG_79i2FlUPdxaOEr4McFzv7eyUu0c9t4-0v3hjH74pIWBEU1jkuWBWUEQGsEQ=s128" alt="" loading="lazy"><div><h3><a href="/football-coach/" style="color:inherit;text-decoration:none">Football Coach</a></h3><p class="sub">Playing Time</p></div></div>
-      <p class="desc">Fair playing time for grassroots football: live minutes, goals, assists and substitutions.</p>
-      <div class="links"><a href="/football-coach/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=com.aistudio.footballcoachmatchtools.vgtxda">Get it on Google Play</a></div>
-    </article>
-    <article class="app">
-      <div class="head"><img src="https://play-lh.googleusercontent.com/ik0U8sCQX8b_FcNnNNv8P_crLjfUrFmk1AKNI56A6dw1rPerxNZOdz8lerOpkI0bCg9GqydMP0q9ggscciCy1g=s128" alt="" loading="lazy"><div><h3><a href="/fitandem/" style="color:inherit;text-decoration:none">Fitandem</a></h3><p class="sub">Stay Active Together</p></div></div>
-      <p class="desc">Stay active together with workouts, shared streaks, achievements and friendly nudges.</p>
-      <div class="links"><a href="/fitandem/" style="font-weight:600;color:var(--accent)">Learn more →</a><a class="play" href="https://play.google.com/store/apps/details?id=uk.co.dkhiggins.fitandem">Get it on Google Play</a></div>
-    </article>
-  </div>
-</div></section>
 </main>
-
-<div class="wrap">
-<section class="promise" id="promise">
-  <div><strong>Offline-first</strong><span>Every app does its main job without a connection.</span></div>
-  <div><strong>No accounts</strong><span>Open the app and start. Nothing to sign up for.</span></div>
-  <div><strong>Your data, your phone</strong><span>Records stay on your device, with backups you control.</span></div>
-  <div><strong>Fair pricing</strong><span>Free with ads, with one-off ways to go ad-free.</span></div>
-</section>
-
-<section class="contact" id="contact">
-  <h2>Get in touch</h2>
-  <p>Questions, bug reports, feature ideas or press: we read everything.</p>
-  <p><a href="mailto:support@ythqstudios.com">support@ythqstudios.com</a></p>
-  <p>Privacy questions: <a href="mailto:privacy@ythqstudios.com">privacy@ythqstudios.com</a></p>
-</section>
-
-<footer>
-  © 2026 YTHQ Studios · <a href="https://play.google.com/store/apps/dev?id=7105260936614890689">All apps on Google Play</a> · <a href="mailto:support@ythqstudios.com">Support</a>
-</footer>
-</div>
+<footer class="site"><div class="wrap">
+<div><img src="/brand/wordmark-light.svg" alt="YTHQ Studios" style="display:var(--logo-light)"><img src="/brand/wordmark-dark.svg" alt="YTHQ Studios" style="display:var(--logo-dark)"><div>© 2026 YTHQ Studios. Made in the UK.</div></div>
+<nav aria-label="Footer"><a href="/#apps">All apps</a><a href="https://play.google.com/store/apps/dev?id=7105260936614890689">Google Play</a><a href="mailto:support@ythqstudios.com">support@ythqstudios.com</a><a href="mailto:privacy@ythqstudios.com">Privacy questions</a></nav>
+</div></footer>
+<script>
+(function(){var bs=document.querySelectorAll('.filters button'),li=document.querySelectorAll('.apps li');
+bs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.f;bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+li.forEach(function(l){l.hidden=!(f==='all'||l.dataset.fam===f)});});});})();
+</script>
 </body>
 </html>
