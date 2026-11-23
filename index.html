@@ -1,10 +1,175 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>YouthTeamHQ Developer Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YTHQ Studios · Small, useful apps for the things you love doing</title>
+<meta name="description" content="YTHQ Studios makes focused Android apps for crafts, kitchens, gardens, sleep and grassroots football. Offline-first, no accounts, your data stays on your phone.">
+<link rel="canonical" href="https://ythqstudios.com/">
+<meta property="og:title" content="YTHQ Studios">
+<meta property="og:description" content="Focused Android apps for crafts, kitchens, gardens, sleep and grassroots football.">
+<meta property="og:url" content="https://ythqstudios.com/">
+<style>
+:root{--bg:#f6f3ec;--ink:#1f2421;--muted:#5d655f;--line:#e2ddd2;--card:#fffdf8;--accent:#2f5d4a;--accent-soft:#e3ece6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{font-weight:700;letter-spacing:.08em;font-size:14px;text-decoration:none;color:var(--ink)}
+.brand span{display:inline-block;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:6px;margin-right:8px;letter-spacing:.04em}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 40px}
+.hero h1{font:600 clamp(38px,6vw,64px)/1.05 Georgia,"Times New Roman",serif;margin:0 0 18px;max-width:14ch;letter-spacing:-.01em}
+.hero p{font-size:20px;color:var(--muted);max-width:56ch;margin:0}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;padding:0;list-style:none}
+.pills li{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+section.group{padding:34px 0 8px;border-top:1px solid var(--line)}
+section.group h2{font:600 26px/1.2 Georgia,serif;margin:0 0 6px}
+section.group > .wrap > p{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-bottom:28px}
+.app{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.app .head{display:flex;gap:14px;align-items:center}
+.app img{width:60px;height:60px;border-radius:15px;flex:none;background:var(--line)}
+.app h3{margin:0;font-size:19px;line-height:1.25}
+.app .sub{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.app p.desc{margin:0;font-size:15.5px}
+.app .links{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:14px}
+.play{background:var(--ink);color:#fff !important;text-decoration:none;padding:9px 16px;border-radius:999px;font-weight:600}
+.play:hover{background:var(--accent)}
+.links a:not(.play){color:var(--muted)}
+.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:40px 0}
+.promise div{border-left:3px solid var(--accent);padding:2px 0 2px 16px}
+.promise strong{display:block;font-size:17px}
+.promise span{color:var(--muted);font-size:15px}
+.contact{background:var(--ink);color:#f3efe6;border-radius:24px;padding:40px;margin:30px 0 50px}
+.contact h2{font:600 30px/1.2 Georgia,serif;margin:0 0 10px}
+.contact p{margin:0 0 8px;color:#cfd6d1}
+.contact a{color:#fff}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+@media (max-width:560px){nav{display:none}.contact{padding:28px}}
+</style>
 </head>
 <body>
-    <h1>Welcome to YouthTeamHQ</h1>
-    <p>Developer website for Football Coach Match Tools and other applications.</p>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="/"><span>YTHQ</span>STUDIOS</a>
+  <nav><a href="#apps">Apps</a><a href="#promise">How we build</a><a href="#contact">Contact</a></nav>
+</header>
+
+<section class="hero">
+  <h1>Small, useful apps for the things you love doing.</h1>
+  <p>We make focused Android apps for crafting, cooking, growing, sleeping and grassroots football. They work offline, need no account, and keep your data on your phone.</p>
+  <ul class="pills"><li>Offline-first</li><li>No sign-up</li><li>Your data stays on your device</li><li>Made in the UK</li></ul>
+</section>
+</div>
+
+<main id="apps">
+<section class="group"><div class="wrap">
+  <h2>Make &amp; create</h2>
+  <p>Keep count, keep track and get back to the fun part.</p>
+  <div class="grid">
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/HJ3vqj4kSdaq9cDf7UvPJGvCFzQJbV7MP-_km58Z_38cvK4sgbn6LpuvGE2C5vZGslKx36T6WxV2w-KJbOVe=s128" alt="" loading="lazy"><div><h3>CrochetTally</h3><p class="sub">Row Counter</p></div></div>
+      <p class="desc">Crochet row and stitch counter with PDF patterns, a home-screen widget, hands-free volume-button counting, a hook size chart and a project timer.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.crochettally">Get it on Google Play</a><a href="/crochettally/privacy.html">Privacy</a><a href="/crochettally/terms.html">Terms</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/GK0nx8MxoQgoCd-16hrnRpeY7lGcRvlWNK6I4HVyupwnF5mguB0PKZb1_OBDw280YWS2OuPe5pVBv0JMzbKLtA=s128" alt="" loading="lazy"><div><h3>Seam Notebook</h3><p class="sub">Sewing Planner</p></div></div>
+      <p class="desc">Sewing organiser for your fabric stash, patterns, projects and sewing machine settings.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.seamnotebook">Get it on Google Play</a><a href="/seam-notebook/privacy.html">Privacy</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/pYSQdGKPeXxoc9JZEt_VpgHFL0Kl0HA-I4nnm6ATenDiNJAt-vnDiJMAQnW387idJIsD2rpfGp-78AuOSRobSw=s128" alt="" loading="lazy"><div><h3>SpoolNest</h3><p class="sub">Filament Tracker</p></div></div>
+      <p class="desc">3D printing filament tracker: spool inventory, grams left, weigh-on-a-scale, print costs, stats and a running-low shopping list.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.spoolnest">Get it on Google Play</a><a href="/spoolnest/privacy.html">Privacy</a><a href="/spoolnest/terms.html">Terms</a></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="group"><div class="wrap">
+  <h2>Kitchen &amp; garden</h2>
+  <p>Better pizza, better coffee and a record of everything you grow.</p>
+  <div class="grid">
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/XWuVfsjUpeDCETCtfpNIQOOZgPqgHDVFPSqefhIWW-7276jpQvkbpz5-4MSh8JM998MqfR4Pm0I9gU_omSflnQ=s128" alt="" loading="lazy"><div><h3>DoughBench</h3><p class="sub">Pizza Calculator</p></div></div>
+      <p class="desc">Pizza dough calculator with style presets, ball weight from pizza size, poolish and biga, and a bake plan with reminders.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.doughbench">Get it on Google Play</a><a href="/doughbench/privacy.html">Privacy</a><a href="/doughbench/terms.html">Terms</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/1ORnuF9F7at4DvtF3Ml2Ci1Iq2PJjZ2R3_DiS0MWs97uIsOoYdf_gCbqAqFQL3Fiy6kX7Jp5aLoH-OTCivCt6g=s128" alt="" loading="lazy"><div><h3>BrewTrail</h3><p class="sub">Coffee Journal</p></div></div>
+      <p class="desc">Coffee brew timer and journal with brew guides, ratios, tasting notes, stats and your best recipe for every bean.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.brewtrail">Get it on Google Play</a><a href="/brewtrail/privacy.html">Privacy</a><a href="/brewtrail/terms.html">Terms</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/iCPD2eoy57i5S9btHV7Sl3ySfVuU7WRNB4B5MvlgrrO3L4dwqfLbIhwi6PyOwqf46RD1KX3qyW4lGJ984j3m4w=s128" alt="" loading="lazy"><div><h3>PlotPickings</h3><p class="sub">Harvest Tracker</p></div></div>
+      <p class="desc">Allotment and vegetable garden harvest log: crops, yields, costs and seasons, all in one place.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.allotmentledger">Get it on Google Play</a><a href="/plotpickings/privacy.html">Privacy</a></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="group"><div class="wrap">
+  <h2>Sleep &amp; rest</h2>
+  <p>Wind down, drift off and explore your dreams.</p>
+  <div class="grid">
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/4DSBP4MuyPdC3TFHNLI56ecjVKHZ6ohpIkuRJr12FD7QaBnH_kM0onhxdQg26qAYcaJyQ7jfE7tejQ8oQwNMNQ=s128" alt="" loading="lazy"><div><h3>Moonlatch</h3><p class="sub">Lucid Dream &amp; Sleep</p></div></div>
+      <p class="desc">Learn to lucid dream with a dream journal, reality checks, sleep sounds and proven techniques.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.oneira">Get it on Google Play</a><a href="/moonlatch/privacy.html">Privacy</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/xSXF00XTs7C_P4C2h6e5IPjkukihbxPyEL_1Vt_yv-parfyUUXwXO0lgzenKp_Fn3PWpTpi21IBVn0VSMQxchQ=s128" alt="" loading="lazy"><div><h3>Airplane Cabin Sounds</h3><p class="sub">Sleep</p></div></div>
+      <p class="desc">Airplane white noise and steady engine hum for sleep and focus. Works offline, with a sleep timer.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.ythqstudios.airplanecabinsounds">Get it on Google Play</a><a href="/night-flight/privacy.html">Privacy</a></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="group"><div class="wrap">
+  <h2>Grassroots football &amp; fitness</h2>
+  <p>Tools for volunteer coaches, and a way to stay active with the people you care about.</p>
+  <div class="grid">
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/LERVgFx0YjMId7s3iDtN9vlLZELCG4tZNOwBm5n8y_u8DkUguri2qm-yAJJxxivJ1xYHtGcE0KKgHyg4RJWD3w=s128" alt="" loading="lazy"><div><h3>Youth Football Attendance</h3><p class="sub">Team register</p></div></div>
+      <p class="desc">Attendance register for youth football coaches: training, matches and reminders in one place.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.aistudio.youthfootballattendance.ymzkvq">Get it on Google Play</a><a href="/youth-football-attendance-privacy/">Privacy</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/FFs3rEIRf5udjP3rStgJt8UxnG_79i2FlUPdxaOEr4McFzv7eyUu0c9t4-0v3hjH74pIWBEU1jkuWBWUEQGsEQ=s128" alt="" loading="lazy"><div><h3>Football Coach</h3><p class="sub">Playing Time</p></div></div>
+      <p class="desc">Fair playing time for grassroots football: live minutes, goals, assists and substitutions.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=com.aistudio.footballcoachmatchtools.vgtxda">Get it on Google Play</a></div>
+    </article>
+    <article class="app">
+      <div class="head"><img src="https://play-lh.googleusercontent.com/ik0U8sCQX8b_FcNnNNv8P_crLjfUrFmk1AKNI56A6dw1rPerxNZOdz8lerOpkI0bCg9GqydMP0q9ggscciCy1g=s128" alt="" loading="lazy"><div><h3>Fitandem</h3><p class="sub">Stay Active Together</p></div></div>
+      <p class="desc">Stay active together with workouts, shared streaks, achievements and friendly nudges.</p>
+      <div class="links"><a class="play" href="https://play.google.com/store/apps/details?id=uk.co.dkhiggins.fitandem">Get it on Google Play</a></div>
+    </article>
+  </div>
+</div></section>
+</main>
+
+<div class="wrap">
+<section class="promise" id="promise">
+  <div><strong>Offline-first</strong><span>Every app does its main job without a connection.</span></div>
+  <div><strong>No accounts</strong><span>Open the app and start. Nothing to sign up for.</span></div>
+  <div><strong>Your data, your phone</strong><span>Records stay on your device, with backups you control.</span></div>
+  <div><strong>Fair pricing</strong><span>Free with ads, with one-off ways to go ad-free.</span></div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Get in touch</h2>
+  <p>Questions, bug reports, feature ideas or press: we read everything.</p>
+  <p><a href="mailto:support@ythqstudios.com">support@ythqstudios.com</a></p>
+  <p>Privacy questions: <a href="mailto:privacy@ythqstudios.com">privacy@ythqstudios.com</a></p>
+</section>
+
+<footer>
+  © 2026 YTHQ Studios · <a href="https://play.google.com/store/apps/dev?id=7105260936614890689">All apps on Google Play</a> · <a href="mailto:support@ythqstudios.com">Support</a>
+</footer>
+</div>
 </body>
 </html>
