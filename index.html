@@ -42,7 +42,8 @@ footer.site .wrap{display:grid;grid-template-columns:1fr auto;gap:24px;align-ite
 footer.site nav{display:flex;flex-wrap:wrap;gap:8px 22px}
 footer.site a{color:var(--fg2)}
 footer.site img{height:28px;width:auto;margin-bottom:10px}
-@media (max-width:720px){nav.main a.hide{display:none}footer.site .wrap{grid-template-columns:1fr}}
+@media (max-width:720px){nav.main a.hide{display:none}footer.site .wrap{grid-template-columns:1fr}.wrap{padding:0 20px}header.site .wrap{height:58px}.logo img{height:26px}nav.main{gap:2px}nav.main a{font-size:14px;padding:8px 10px}}
+nav.main a{white-space:nowrap}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 .hero{background:var(--forest);color:#EEE9DF;overflow:hidden;position:relative}
@@ -62,7 +63,7 @@ footer.site img{height:28px;width:auto;margin-bottom:10px}
 .fan a:hover span,.fan a:focus-visible span{opacity:1}
 @keyframes open{from{transform:rotate(0deg) translateY(40px);opacity:0}to{transform:rotate(var(--a));opacity:1}}
 .hero .fan::after{content:"";position:absolute;left:0;right:0;bottom:0;height:80px;background:linear-gradient(transparent,var(--forest));pointer-events:none;z-index:35}
-@media (max-width:720px){.fan{height:200px}.fan a{--w:112px}.fan a:nth-child(-n+2),.fan a:nth-last-child(-n+3){display:none}}
+@media (max-width:720px){.hero .wrap{padding-top:44px}.fan{height:190px;margin-top:28px}.fan a{--w:104px}.fan a:nth-child(-n+2),.fan a:nth-last-child(-n+2){display:none}section.dir{padding-top:56px}.hero .cta .btn{width:100%;justify-content:center;max-width:340px}}
 
 section.dir{padding:96px 0 0}
 .dir-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
@@ -101,6 +102,7 @@ section.dir{padding:96px 0 0}
 .contact a.mail:hover{color:var(--ochre)}
 .contact .alt{margin-top:14px;font-size:15px}.contact .alt a{color:#F4EFE6}
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
+@media (max-width:720px){.dir-head{margin-bottom:18px}.filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:2px 20px 6px;scrollbar-width:none;width:calc(100% + 40px)}.filters::-webkit-scrollbar{display:none}.filters button{flex:none}}
 </style>
 </head>
 <body>
